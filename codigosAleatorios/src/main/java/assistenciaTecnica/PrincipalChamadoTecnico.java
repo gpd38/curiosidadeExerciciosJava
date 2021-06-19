@@ -1,5 +1,7 @@
 package assistenciaTecnica;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -8,16 +10,8 @@ public class PrincipalChamadoTecnico {
 	static Scanner entrada;
 	static int operacao;
 	static AssistenciaTecnica assTecnica;
-	
-	public static void main(String[] args) {
-		
-		Date data = new Date();
-		
-		System.out.println(data);
-		System.out.println(data.getDate()+"/"+data.getMonth()+"/"+data.getDay() );
-	}
 
-	public static void maina(String[] args) {
+	public static void main(String[] args) {
 
 		entrada = new Scanner(System.in);
 		assTecnica = new AssistenciaTecnica();
