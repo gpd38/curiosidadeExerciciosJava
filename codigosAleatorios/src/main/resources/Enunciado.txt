@@ -1,0 +1,23 @@
+Criar um sistema OO, que é uma assistência técnica em que um usuário pode abrir um chamado. 
+
+Implemente neste sistema as seguintes funcionalidades: 
+	Abertura de chamado – Permite que seja aberto um chamado para posterior atendimento. 
+		Dados do chamado: 
+			Nº do chamado (não pode repetir) 
+			Nome do cliente 
+			CPF do cliente
+			Descrição do problema
+			Data de abertura (automático)
+			Situação do chamado (“aberto”)
+			Previsão do atendimento (data e hora)
+	Atendimento do chamado – Permite efetuar o registro do atendimento do chamado, aberto anteriormente.
+		Exibir todos os chamados abertos.
+		Técnico escolhe um chamado pelo número.
+		Técnico preenche o seu CPF ( a data e hora do atendimento, a solução do problema e ao salvar a situação do chamado muda para (“encerrado”) 
+	Cancelar chamado – permite efetuar o cancelamento de um chamado, que não poderá mais ser atendido. 
+		Exibir todos os chamados abertos
+		O técnico escolhe o chamado através do número do chamado
+		Efetua o cancelamento, alterando a situação do chamado para (“Cancelado”)
+	Consultas – permite efetuar consultas nos chamados. 
+		Chamados abertos
+		Exibe todos os dados de todos os chamados que ainda não foram encerrados ou cancelados
