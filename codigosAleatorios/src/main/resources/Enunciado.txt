@@ -21,3 +21,8 @@ Implemente neste sistema as seguintes funcionalidades:
 	Consultas – permite efetuar consultas nos chamados. 
 		Chamados abertos
 		Exibe todos os dados de todos os chamados que ainda não foram encerrados ou cancelados
+
+		
+Referencias de consulta
+	https://cafeinacodificada.com.br/datas-java/
+	https://dicasdejava.com.br/como-gerar-um-numero-aleatorio-em-java/

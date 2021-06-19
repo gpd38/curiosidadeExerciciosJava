@@ -1,7 +1,5 @@
 package assistenciaTecnica;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Chamado {
@@ -62,11 +60,8 @@ public class Chamado {
 		this.previsaoAtendimento = previsaoAtendimento;
 	}
 
-	public void setDataAbertura() {
-		Date dataAbertura = new Date();
-		DateFormat formatterPT = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		String dataAberturaFormatada = formatterPT.format(dataAbertura);
-		this.dataAbertura = dataAberturaFormatada;
+	public void setDataAbertura(String dataAbertura) {
+		this.dataAbertura = dataAbertura;
 	}
 
 	public String getDataAbertura() {
