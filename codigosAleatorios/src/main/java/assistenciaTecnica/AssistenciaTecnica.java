@@ -3,6 +3,7 @@ package assistenciaTecnica;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -23,19 +24,17 @@ public class AssistenciaTecnica extends Chamado {
 		int opcao = entrada.nextInt();
 
 		if (opcao == 1) {
-			int random;
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 5; i++) {
 				c = new Chamado();
-				do {
-					random = (int) (Math.random() * 10000);
-				} while (verificaSeExiste(random));
 				c.setNumChamado(i);
-				c.setNomeCliente("Nome" + (i + 1));
-				c.setCpfCliente("" + i);
-				c.setDescricaoProblema("descricao" + i);
+				c.setNomeCliente("Cliente 0" + (i + 1));
+				c.setCpfCliente(i + "00" + i + "00" + i + "00" + i + "" + i);
+				c.setDescricaoProblema("Problema 00" + i);
 				c.setDataAbertura(dataAbertura());
 				c.setSituacaoChamado("Aberto");
-				c.setPrevisaoAtendimento(c.getPrevisaoAtendimento());
+				c.setPrevisaoAtendimento(dataAtendimento());
+				c.setCpfFuncionario("");
+				c.setSolucaoProblema("");
 
 				listChamado.add(c);
 			}
@@ -71,11 +70,57 @@ public class AssistenciaTecnica extends Chamado {
 
 			c.setDataAbertura(dataAbertura());
 			c.setSituacaoChamado("Aberto");
-			Date previsaoAtendimento = new Date();
-			c.setPrevisaoAtendimento(previsaoAtendimento);
+			c.setPrevisaoAtendimento(dataAtendimento());
 
 			listChamado.add(c);
 		}
+	}
+
+	public void AtenderChamado() {
+		exibeTodosChamados();
+		System.out.println("Informe o número do chamado que deseja atender: ");
+		int atenderChamado = entrada.nextInt();
+		for (int i = 0; i < listChamado.size(); i++) {
+			if (listChamado.get(i).getNumChamado() == atenderChamado) {
+				System.out.println("Informe o CPF do funcionário que atendeu o chamado: ");
+				listChamado.get(i).setCpfFuncionario(entrada.next());
+				System.out.println("Informe a solução para o problema: ");
+				listChamado.get(i).setSolucaoProblema(entrada.next());
+				listChamado.get(i).setSituacaoChamado("Encerrado");
+				System.out.println("Chamado " + listChamado.get(i).getNumChamado() + " finalizado com sucesso");
+				break;
+			}
+		}
+	}
+
+	public void CancelarChamado() {
+		exibeTodosChamados();
+		System.out.println("Informe o número do chamado que deseja cancelar: ");
+		int cancelarChamado = entrada.nextInt();
+		for (int i = 0; i < listChamado.size(); i++) {
+			if (listChamado.get(i).getNumChamado() == cancelarChamado) {
+				listChamado.get(i).setSituacaoChamado("Cancelado");
+				System.out.println("Chamado " + listChamado.get(i).getNumChamado() + " cancelado com sucesso");
+				break;
+			}
+		}
+	}
+
+	public void ConsultarChamado() {
+		int cont = 1;
+		for (Chamado chamado : listChamado) {
+			if (chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")) {
+				System.out.println("Dados do Chamado :");
+				System.out.println("\tNumero do Chamado: " + chamado.getNumChamado());
+				System.out.println("\tNome do Cliente: " + chamado.getNomeCliente());
+				System.out.println("\tCPF do Cliente: " + chamado.getCpfCliente());
+				System.out.println("\tSituação do Chamado: " + chamado.getSituacaoChamado());
+				System.out.println("\tData Abertura: " + chamado.getDataAbertura());
+				System.out.println("\tPrevisão de atendimento: " + chamado.getPrevisaoAtendimento());
+				cont++;
+			}
+		}
+		System.out.println();
 	}
 
 	private void MenuTemporareo() {
@@ -97,23 +142,25 @@ public class AssistenciaTecnica extends Chamado {
 		return false;
 	}
 
-	public void AtenderChamado() {
-
-	}
-
-	public void CancelarChamado() {
-
-	}
-
-	public void ConsultarChamado() {
+	private void exibeTodosChamados() {
+		int cont = 1;
 		for (Chamado chamado : listChamado) {
-			System.out.println(chamado.getNumChamado());
-			System.out.println(chamado.getNomeCliente());
-			System.out.println(chamado.getCpfCliente());
-			System.out.println(chamado.getSituacaoChamado());
-			System.out.println(chamado.getDataAbertura());
-			System.out.println(chamado.getPrevisaoAtendimento());
+			System.out.println("Dados do Chamado :");
+			System.out.println("\tNumero do Chamado: " + chamado.getNumChamado());
+			System.out.println("\tNome do Cliente: " + chamado.getNomeCliente());
+			System.out.println("\tCPF do Cliente: " + chamado.getCpfCliente());
+			System.out.println("\tSituação do Chamado: " + chamado.getSituacaoChamado());
+			System.out.println("\tData Abertura: " + chamado.getDataAbertura());
+			System.out.println("\tPrevisão de atendimento: " + chamado.getPrevisaoAtendimento());
+			if (!chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")) {
+				System.out.println("\t" + chamado.getCpfFuncionario());
+				if (!chamado.getSituacaoChamado().equalsIgnoreCase("Cancelado")) {
+					System.out.println("\t" + chamado.getSolucaoProblema());
+				}
+			}
+			cont++;
 		}
+		System.out.println();
 	}
 
 	private String dataAbertura() {
@@ -121,6 +168,17 @@ public class AssistenciaTecnica extends Chamado {
 		DateFormat formatterPT = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String dataAberturaFormatada = formatterPT.format(dataAbertura);
 		return dataAberturaFormatada;
+	}
+
+	private String dataAtendimento() {
+		Date dt = new Date();
+		// System.out.println("Today: " + dt);
+		Calendar c = Calendar.getInstance();
+		c.setTime(dt);
+		c.add(Calendar.DATE, 1);
+		dt = c.getTime();
+		// System.out.println("Tomorrow: " + dt);
+		return dt.toString();
 	}
 
 }

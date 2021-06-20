@@ -1,16 +1,17 @@
 package assistenciaTecnica;
 
-import java.util.Date;
-
 public class Chamado {
 
 	private int numChamado;
 	private String nomeCliente;
 	private String cpfCliente;
 	private String descricaoProblema;
-	private String dataAbertura;
+	private String solucaoProblema;
 	private String situacaoChamado;
-	private Date previsaoAtendimento;
+	private String dataAbertura;
+	private String previsaoAtendimento;
+	private String dataAtendimento;
+	private String cpfFuncionario;
 
 	public int getNumChamado() {
 		return numChamado;
@@ -44,6 +45,14 @@ public class Chamado {
 		this.descricaoProblema = descricaoProblema;
 	}
 
+	public String getSolucaoProblema() {
+		return solucaoProblema;
+	}
+
+	public void setSolucaoProblema(String solucaoProblema) {
+		this.solucaoProblema = solucaoProblema;
+	}
+
 	public String getSituacaoChamado() {
 		return situacaoChamado;
 	}
@@ -52,11 +61,11 @@ public class Chamado {
 		this.situacaoChamado = situacaoChamado;
 	}
 
-	public Date getPrevisaoAtendimento() {
+	public String getPrevisaoAtendimento() {
 		return previsaoAtendimento;
 	}
 
-	public void setPrevisaoAtendimento(Date previsaoAtendimento) {
+	public void setPrevisaoAtendimento(String previsaoAtendimento) {
 		this.previsaoAtendimento = previsaoAtendimento;
 	}
 
@@ -66,6 +75,22 @@ public class Chamado {
 
 	public String getDataAbertura() {
 		return dataAbertura;
+	}
+
+	public String getDataAtendimento() {
+		return dataAtendimento;
+	}
+
+	public void setDataAtendimento(String dataAtendimento) {
+		this.dataAtendimento = dataAtendimento;
+	}
+
+	public String getCpfFuncionario() {
+		return cpfFuncionario;
+	}
+
+	public void setCpfFuncionario(String cpfFuncionario) {
+		this.cpfFuncionario = cpfFuncionario;
 	}
 
 }
