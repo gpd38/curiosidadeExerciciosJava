@@ -18,6 +18,7 @@ Este projeto é um repositório para armazenar exercícios, dúvidas e testes al
 |Código             |Link                                |
 |:------------------|------------------------------------|
 |Triangulo de Pascal|[Programa001]()|
+|Assistência Técnica|[Programa002](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/assistenciaTecnica)
  
 ### Licença
 
