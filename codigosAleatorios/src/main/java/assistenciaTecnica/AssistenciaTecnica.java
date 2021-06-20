@@ -1,10 +1,6 @@
 package assistenciaTecnica;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,33 +9,39 @@ public class AssistenciaTecnica extends Chamado {
 	List<Chamado> listChamado;
 	Scanner entrada;
 	Chamado c;
+	Utils utilidade;
 
 	public AssistenciaTecnica() {
 		listChamado = new ArrayList<Chamado>();
 		entrada = new Scanner(System.in);
+		utilidade = new Utils();
 	}
 
+	/**
+	 * Metodo que realiza a abertura de uma solicitação / chamado
+	 */
 	public void AbrirChamado() {
 		MenuTemporareo();
 		int opcao = entrada.nextInt();
 
+		// Gerar chamados automáticos
 		if (opcao == 1) {
 			for (int i = 0; i < 5; i++) {
 				c = new Chamado();
-				c.setNumChamado(i);
-				c.setNomeCliente("Cliente 0" + (i + 1));
-				c.setCpfCliente(i + "00" + i + "00" + i + "00" + i + "" + i);
-				c.setDescricaoProblema("Problema 00" + i);
-				c.setDataAbertura(dataAbertura());
+				c.setNumChamado(utilidade.getNumeroAleatorio(5));
+				c.setNomeCliente(utilidade.gerarNomeAleatorio());
+				c.setCpfCliente(utilidade.gerarCPFAleatorio());
+				c.setDescricaoProblema(utilidade.gerarDescricaoAleatoria());
+				c.setDataAbertura(utilidade.gerarDataNoMomentoAtual());
 				c.setSituacaoChamado("Aberto");
-				c.setPrevisaoAtendimento(dataAtendimento());
+				c.setPrevisaoAtendimento(utilidade.gerarDataPrevisao());
 				c.setCpfFuncionario("");
 				c.setSolucaoProblema("");
 
 				listChamado.add(c);
 			}
 		} else {
-
+			// Gerar chamados manualmente
 			c = new Chamado();
 			int numChamado;
 			String nomeCliente, cpfCliente, descricaoProblema;
@@ -48,7 +50,7 @@ public class AssistenciaTecnica extends Chamado {
 				System.out.print("\nInforme o Nº do chamado: ");
 				numChamado = entrada.nextInt();
 				c.setNumChamado(numChamado);
-			} while (verificaSeExiste(numChamado));
+			} while (utilidade.verificaSeExiste(numChamado));
 
 			do {
 				System.out.print("\nInforme o Nome do cliente: ");
@@ -68,117 +70,181 @@ public class AssistenciaTecnica extends Chamado {
 				c.setDescricaoProblema(descricaoProblema);
 			} while (descricaoProblema.length() < 3 && descricaoProblema != null);
 
-			c.setDataAbertura(dataAbertura());
+			c.setDataAbertura(utilidade.gerarDataNoMomentoAtual());
 			c.setSituacaoChamado("Aberto");
-			c.setPrevisaoAtendimento(dataAtendimento());
+			c.setPrevisaoAtendimento(utilidade.gerarDataPrevisao());
 
 			listChamado.add(c);
 		}
 	}
 
+	/**
+	 * Metodo que realiza a alteração de informações do chamado depois que o mesmo é
+	 * atendido
+	 */
 	public void AtenderChamado() {
+		// [-3 ] Chamado Cancelado
+		// [-2 ] Chamado Encerrado
+		// [-1 ] Chamado não existe
+		// [ 0 ] Chamado existe e será alterado
+		int controleDeMensagem = -1;
+
 		exibeTodosChamados();
-		System.out.println("Informe o número do chamado que deseja atender: ");
+		System.out.print("Informe o número do chamado que deseja atender: ");
 		int atenderChamado = entrada.nextInt();
+
 		for (int i = 0; i < listChamado.size(); i++) {
 			if (listChamado.get(i).getNumChamado() == atenderChamado) {
-				System.out.println("Informe o CPF do funcionário que atendeu o chamado: ");
-				listChamado.get(i).setCpfFuncionario(entrada.next());
-				System.out.println("Informe a solução para o problema: ");
-				listChamado.get(i).setSolucaoProblema(entrada.next());
-				listChamado.get(i).setSituacaoChamado("Encerrado");
-				System.out.println("Chamado " + listChamado.get(i).getNumChamado() + " finalizado com sucesso");
-				break;
+				if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Aberto")) {
+					System.out.print("Informe o CPF do funcionário que atendeu o chamado: ");
+					listChamado.get(i).setCpfFuncionario(entrada.next());
+					System.out.print("Informe a solução para o problema: ");
+					listChamado.get(i).setSolucaoProblema(entrada.next());
+					listChamado.get(i).setSituacaoChamado("Encerrado");
+					controleDeMensagem = 0;
+					break;
+				} else if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Encerrado")) {
+					controleDeMensagem = -2;
+					break;
+				} else if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Cancelado")) {
+					controleDeMensagem = -3;
+					break;
+				}
 			}
+		}
+		if (controleDeMensagem == 0) {
+			System.out.println("Chamado " + atenderChamado + " encerrado com sucesso");
+		} else if (controleDeMensagem == -1) {
+			System.out.println("\tChamado não existe.");
+		} else if (controleDeMensagem == -2) {
+			System.out.println("\tChamado já foi encerrado.");
+		} else {
+			System.out.println("\tChamado encerrado não pode ser cancelado.");
 		}
 	}
 
+	/**
+	 * Metodo que faz o canclamento de uma chamado
+	 */
 	public void CancelarChamado() {
+		// [-3 ] Chamado Cancelado
+		// [-2 ] Chamado Encerrado
+		// [-1 ] Chamado não existe
+		// [ 0 ] Chamado existe e será alterado
+		int controleDeMensagem = -1;
+
 		exibeTodosChamados();
-		System.out.println("Informe o número do chamado que deseja cancelar: ");
+		System.out.print("Informe o número do chamado que deseja cancelar: ");
 		int cancelarChamado = entrada.nextInt();
+
 		for (int i = 0; i < listChamado.size(); i++) {
 			if (listChamado.get(i).getNumChamado() == cancelarChamado) {
-				listChamado.get(i).setSituacaoChamado("Cancelado");
-				System.out.println("Chamado " + listChamado.get(i).getNumChamado() + " cancelado com sucesso");
-				break;
+				if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Aberto")) {
+					listChamado.get(i).setSituacaoChamado("Cancelado");
+					controleDeMensagem = 0;
+					break;
+				} else if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Encerrado")) {
+					controleDeMensagem = -2;
+					break;
+				} else if (listChamado.get(i).getSituacaoChamado().equalsIgnoreCase("Cancelado")) {
+					controleDeMensagem = -3;
+					break;
+				}
 			}
+		}
+
+		if (controleDeMensagem == 0) {
+			System.out.println("Chamado " + cancelarChamado + " cancelado com sucesso");
+		} else if (controleDeMensagem == -1) {
+			System.out.println("\tChamado não existe.");
+		} else if (controleDeMensagem == -2) {
+			System.out.println("\tChamado Encerrado não pode ser cancelado.");
+		} else {
+			System.out.println("\tChamado já foi cancelado.");
 		}
 	}
 
+	/**
+	 * Metodo que realiza a consulta dos chamados em aberto
+	 */
 	public void ConsultarChamado() {
-		int cont = 1;
 		for (Chamado chamado : listChamado) {
 			if (chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")) {
 				System.out.println("Dados do Chamado :");
-				System.out.println("\tNumero do Chamado: " + chamado.getNumChamado());
-				System.out.println("\tNome do Cliente: " + chamado.getNomeCliente());
-				System.out.println("\tCPF do Cliente: " + chamado.getCpfCliente());
-				System.out.println("\tSituação do Chamado: " + chamado.getSituacaoChamado());
-				System.out.println("\tData Abertura: " + chamado.getDataAbertura());
-				System.out.println("\tPrevisão de atendimento: " + chamado.getPrevisaoAtendimento());
-				cont++;
+				System.out.println("\tNumero do Chamado:       " + chamado.getNumChamado());
+				System.out.println("\tNome do Cliente:         " + chamado.getNomeCliente());
+				System.out.println("\tCPF do Cliente:          " + chamado.getCpfCliente());
+				System.out.println("\tStatus do Chamado:       " + chamado.getSituacaoChamado());
+				System.out.println("\tData Abertura:           " + chamado.getDataAbertura());
+				System.out.println("\tPrevisão de Atendimento: " + chamado.getPrevisaoAtendimento());
 			}
 		}
 		System.out.println();
 	}
 
+	/**
+	 * Menu para solicitar se a geração dos chamados devem ser automatica
+	 */
 	private void MenuTemporareo() {
 		System.out.println("===========================");
-		System.out.println(" Preencher automaticamente ");
+		System.out.println(" Gerar Chamados Aleatórios ");
 		System.out.println("===========================");
 		System.out.println("[0] NÃO.                   ");
 		System.out.println("[1] SIM.                   ");
 		System.out.println("===========================");
-		System.out.println("Escolha a opção.           ");
+		System.out.print("Escolha a opção: ");
 	}
 
-	private boolean verificaSeExiste(int numChamado) {
-		for (Chamado chamado : listChamado) {
-			if (chamado.getNumChamado() == numChamado) {
-				return true;
-			}
-		}
-		return false;
-	}
-
+	/**
+	 * Metodo utilizado para exibir os chamados existentes
+	 */
 	private void exibeTodosChamados() {
-		int cont = 1;
 		for (Chamado chamado : listChamado) {
 			System.out.println("Dados do Chamado :");
-			System.out.println("\tNumero do Chamado: " + chamado.getNumChamado());
-			System.out.println("\tNome do Cliente: " + chamado.getNomeCliente());
-			System.out.println("\tCPF do Cliente: " + chamado.getCpfCliente());
-			System.out.println("\tSituação do Chamado: " + chamado.getSituacaoChamado());
-			System.out.println("\tData Abertura: " + chamado.getDataAbertura());
+			System.out.println("\tNumero do Chamado:       " + chamado.getNumChamado());
+			System.out.println("\tNome do Cliente:         " + chamado.getNomeCliente());
+			System.out.println("\tCPF do Cliente:          " + chamado.getCpfCliente());
+			System.out.println("\tSituação do Chamado:     " + chamado.getSituacaoChamado());
+			System.out.println("\tData Abertura:           " + chamado.getDataAbertura());
 			System.out.println("\tPrevisão de atendimento: " + chamado.getPrevisaoAtendimento());
-			if (!chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")) {
-				System.out.println("\t" + chamado.getCpfFuncionario());
+
+			/**
+			 * if que trata as informações dos chamados ENCERRADOS e CANCELADOS que estão
+			 * como null
+			 */
+			if (!chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")
+					&& !chamado.getSituacaoChamado().equalsIgnoreCase("Cancelado")) {
+				System.out.println("\tCPF do Funcionario:      " + chamado.getCpfFuncionario());
 				if (!chamado.getSituacaoChamado().equalsIgnoreCase("Cancelado")) {
-					System.out.println("\t" + chamado.getSolucaoProblema());
+					System.out.println("\tSoluçao do Chamado:      " + chamado.getSolucaoProblema());
 				}
 			}
-			cont++;
 		}
 		System.out.println();
 	}
 
-	private String dataAbertura() {
-		Date dataAbertura = new Date();
-		DateFormat formatterPT = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		String dataAberturaFormatada = formatterPT.format(dataAbertura);
-		return dataAberturaFormatada;
-	}
+	public void RelatorioChamado() {
+		int chamadosAbertos = 0;
+		int chamadosAtendidos = 0;
+		int chamadosCancelados = 0;
 
-	private String dataAtendimento() {
-		Date dt = new Date();
-		// System.out.println("Today: " + dt);
-		Calendar c = Calendar.getInstance();
-		c.setTime(dt);
-		c.add(Calendar.DATE, 1);
-		dt = c.getTime();
-		// System.out.println("Tomorrow: " + dt);
-		return dt.toString();
+		for (Chamado chamado : listChamado) {
+			//identificar as situações e somar a quantidade
+			if (chamado.getSituacaoChamado().equalsIgnoreCase("Aberto")) {
+				chamadosAbertos++;
+			} else if (chamado.getSituacaoChamado().equalsIgnoreCase("Encerrado")) {
+				chamadosAtendidos++;
+			} else {
+				chamadosCancelados++;
+			}
+		}
+
+		System.out.println("=========================");
+		System.out.println("  Relatório de Chamados  ");
+		System.out.println("=========================");
+		System.out.println("Abertos:    " + chamadosAbertos);
+		System.out.println("Encerrados: " + chamadosAtendidos);
+		System.out.println("Cancelados: " + chamadosCancelados);
 	}
 
 }

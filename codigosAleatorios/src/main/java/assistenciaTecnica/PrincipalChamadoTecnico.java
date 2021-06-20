@@ -7,7 +7,7 @@ public class PrincipalChamadoTecnico {
 	static Scanner entrada;
 	static int operacao;
 	static AssistenciaTecnica assTecnica;
-
+	
 	public static void main(String[] args) {
 
 		entrada = new Scanner(System.in);
@@ -24,23 +24,28 @@ public class PrincipalChamadoTecnico {
 			}
 				break;
 			case 1: {
-				System.out.println("Abrir chamado.");
+				//System.out.println("Abrir chamado.");
 				assTecnica.AbrirChamado();
 			}
 				break;
 			case 2: {
-				System.out.println("Atender chamado.");
+				//System.out.println("Atender chamado.");
 				assTecnica.AtenderChamado();
 			}
 				break;
 			case 3: {
-				System.out.println("Cancelar chamado.");
+				//System.out.println("Cancelar chamado.");
 				assTecnica.CancelarChamado();
 			}
 				break;
 			case 4: {
-				System.out.println("Consultar chamado.");
+				//System.out.println("Consultar chamado.");
 				assTecnica.ConsultarChamado();
+			}
+				break;
+			case 5: {
+				//System.out.println("Relatório chamado.");
+				assTecnica.RelatorioChamado();
 			}
 				break;
 			default:
@@ -48,6 +53,7 @@ public class PrincipalChamadoTecnico {
 				break;
 			}
 		} while (operacao != 0);
+		
 
 	}
 
@@ -61,8 +67,9 @@ public class PrincipalChamadoTecnico {
 		System.out.println("[2] Atender Chamado.     ");
 		System.out.println("[3] Cancelar Chamado.    ");
 		System.out.println("[4] Consultar Chamado.   ");
+		System.out.println("[5] Relatório Chamado.   ");
 		System.out.println("=========================");
-		System.out.println("Escolha a operação");
+		System.out.print("Escolha a operação: ");
 
 	}
 

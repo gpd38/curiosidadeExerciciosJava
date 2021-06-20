@@ -22,7 +22,49 @@ Implemente neste sistema as seguintes funcionalidades:
 		Chamados abertos
 		Exibe todos os dados de todos os chamados que ainda não foram encerrados ou cancelados
 
+Adicionei por conta própria
+	Relatórios - permite efetuar a emissão de relatórios quantitativo dos chamados
+		Exibir a quantidade de chamados abertos
+		Exibir a quantidade de chamados atendidos
+		Exibir a quantidade de chamados Cancelados
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 Referencias de consulta
 	https://cafeinacodificada.com.br/datas-java/
 	https://dicasdejava.com.br/como-gerar-um-numero-aleatorio-em-java/
+	https://www.delftstack.com/pt/howto/java/how-to-add-one-day-to-a-date-in-java/
+	https://receitasdecodigo.com.br/java/classe-java-completa-para-gerar-e-validar-cpf-e-cnpj

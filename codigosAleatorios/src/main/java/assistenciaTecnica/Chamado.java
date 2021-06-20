@@ -2,6 +2,7 @@ package assistenciaTecnica;
 
 public class Chamado {
 
+	//Atributos
 	private int numChamado;
 	private String nomeCliente;
 	private String cpfCliente;
@@ -13,6 +14,7 @@ public class Chamado {
 	private String dataAtendimento;
 	private String cpfFuncionario;
 
+	// Getter and Setters 
 	public int getNumChamado() {
 		return numChamado;
 	}
