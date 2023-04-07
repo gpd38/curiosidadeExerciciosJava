@@ -8,7 +8,7 @@ public class ReadWithScanner {
 
 	public static void main(String[] args) {
 
-		File file = new File("C:\\temp\\in.txt");
+		File file = new File("C:\\temp\\input.txt");
 		Scanner sc = null;
 		try {
 			sc = new Scanner(file);
