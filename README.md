@@ -1,6 +1,7 @@
-# Códigos aleatórios
+#  Exercícios em Java
 
-Este projeto é um repositório para armazenar exercícios, dúvidas e testes aleatórios em java.
+Este projeto é um repositório para armazenar exercícios, dúvidas, ideias, curiosidades e testes aleatórios em java.
+Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, amigos que me enviam e tarefas que precisei um dia fazer.
 
 <p align="center">
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gpd38/curiosidadeProgramasAleatorios?color=blue">
