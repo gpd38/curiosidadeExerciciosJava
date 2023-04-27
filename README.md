@@ -18,18 +18,19 @@ Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, a
 
 ### Código
 
-|Código             |Link                                |
-|:------------------|------------------------------------|
-|Triangulo de Pascal|[Programa001](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/trianguloPascal)|
-|Assistência Técnica|[Programa002](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/assistenciaTecnica)
-|Triangulo Retângulo|[Programa003](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/tiposTriangulo)|
-|Leitura de Arquivo |[Programa004](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/leituraDeArquivo)|
-|Calculadora|[Programa005](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/calculadora)|
-|Deletar Arquivo|[Programa006](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/deletaArquivos)|
-|Jogo da Velha|[Programa007](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/jogodavelha)|
-|Desafios Web|[Programa008](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/desafiosWeb)|
-|Estoque e Vendas|[Programa009](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/estoqueVendas)|
-|Web Driver|[Programa010](https://github.com/gpd38/curiosidadeCodigosAleatorios/tree/main/codigosAleatorios/src/main/java/webDriver)|
+|Código             |Link                                                                                                                   |
+|:------------------|-----------------------------------------------------------------------------------------------------------------------|
+|Triangulo de Pascal|[Programa001](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa001)|
+|Assistência Técnica|[Programa002](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa002)|
+|Triangulo Retângulo|[Programa003](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa003)|
+|Leitura de Arquivo |[Programa004](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa004)|
+|Calculadora        |[Programa005](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa005)|
+|Deletar Arquivo    |[Programa006](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa006)|
+|Jogo da Velha      |[Programa007](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa007)|
+|Desafios Web       |[Programa008](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa008)|
+|Estoque e Vendas   |[Programa009](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa009)|
+|Web Driver         |[Programa010](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa010)|
+|Matriz             |[Programa011](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa011)|
  
 ### Licença
 
