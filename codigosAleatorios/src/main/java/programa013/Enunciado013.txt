@@ -1,0 +1,13 @@
+O Cadastur é um sistema de cadastro de prestadores de serviços turísticos do Ministério do Turismo do Brasil. 
+Para validar o número do crachá de um guia de turismo cadastrado no Cadastur, é utilizado o algoritmo conhecido como Módulo 10.
+
+O Módulo 10 é um algoritmo de cálculo usado para verificar a validade de números de documentos, como CPF, CNPJ, cartões de crédito, entre outros. 
+No caso do número do crachá de um guia de turismo cadastrado no Cadastur, o Módulo 10 é aplicado da seguinte forma:
+
+O número do crachá é formado por 10 dígitos.
+Começando da esquerda para a direita, multiplica-se cada um dos 9 primeiros dígitos por um peso que varia de 2 a 10, conforme a posição do dígito. 
+O primeiro dígito é multiplicado por 2, o segundo por 3, o terceiro por 4, e assim por diante, até o nono dígito, que é multiplicado por 10.
+Somam-se os resultados das multiplicações.
+O resultado da soma é dividido por 10, e o resto da divisão é subtraído de 10. 
+Se o resultado for 10, ele é considerado como zero.
+O último dígito do número do crachá deve ser igual ao resultado obtido na etapa anterior.
