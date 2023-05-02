@@ -1,0 +1,41 @@
+Uma matriz é uma estrutura de dados bidimensional, ou seja, é uma tabela retangular composta por linhas e colunas. 
+Cada elemento da matriz é identificado por um par de índices que indicam sua posição na tabela.
+
+Escreva um programa em java que realize as seguintes operações com matriz:
+
+01) Criar um método para gerar uma matriz com as dimensões que o usuário desejar, porém deve-se validar se o parâmetro mínimo é maior ou igual a 3 e menor ou igual a 50.
+02) Criar um método para preencher a matriz automaticamente com valores maiores que zero e menores que 1000.
+03) Criar um método para preencher a matriz manualmente limitando os valores digitados a maiores que zero e menores que 1000.
+04) Criar um método para somar cada linha da matriz.
+05) Criar um método para somar cada coluna da matriz.
+06) Criar um método para somar a diagonal principal da matriz.
+07) Criar um método para somar a diagonal secundária da matriz.
+08) Criar um método para somar o triângulo superior da matriz.
+09) Criar um método para somar o triângulo inferior da matriz.
+10) Criar um método para smar cada quadrante da matriz.
+11) Criar um método para pesquisar um elemento na matriz.
+12) Criar um método concatenar duas matrizes.
+13) Criar um método para somar duas matrizes.
+14) Criar um método para subtrair duas matrizes.
+15) Criar um método para multiplicar duas matrizes.
+16) Criar um método para dividir duas matrizes.
+17) Criar um método para gerar uma matriz com a borda em um e os demais em zero.
+18) Criar um método para encontrar o menor e o maior elemento da matriz.
+19) Criar um método para gerar uma matriz com bordas intercaladas entre um e zero.
+20) Criar um método para imprimir as posições da matriz.
+21) Criar um método para imprimir os valores da matriz.
+22) Criar um método para somar as posições da matriz.
+23) Criar um método para ordenar a matriz decrescente.
+24) Criar um método para ordenar a matriz crescente.
+25) Criar um método para atualizar um elemento específico. 
+26) Criar um método para calcular o determinante de uma matriz.
+27) Criar um método para calcular a transposta de uma matriz.
+28) Criar um método para validar se duas matrizes são iguais.
+29) Criar um método para contar quantos elementos pares e ímpares existem na matriz.
+30) Criar um método para validar se a soma de cada linha e coluna são iguais.
+
+Extras:
+31) Criar um método para transformar uma matriz 2D em 3D
+32) Criar um método para gerar uma matriz esparsa.
+
+Realizar os tratamentos necessários de limite inferior e superior, valores digitados entre outras exceções que podem acontecer no programa.
