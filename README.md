@@ -32,6 +32,7 @@ Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, a
 |Web Driver         |[Programa010](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa010)|
 |Matriz             |[Programa011](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa011)|
 |Estrutura de Fila  |[Programa012](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa012)|
+|Alg. de Validação  |[Programa013](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa013)|
  
 ### Licença
 
