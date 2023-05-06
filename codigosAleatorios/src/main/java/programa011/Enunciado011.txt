@@ -6,13 +6,13 @@ Escreva um programa em java que realize as seguintes operações com matriz:
 01) Criar um método para gerar uma matriz com as dimensões que o usuário desejar, porém deve-se validar se o parâmetro mínimo é maior ou igual a 3 e menor ou igual a 50.
 02) Criar um método para preencher a matriz automaticamente com valores maiores que zero e menores que 1000.
 03) Criar um método para preencher a matriz manualmente limitando os valores digitados a maiores que zero e menores que 1000.
-04) Criar um método para somar cada linha da matriz.
-05) Criar um método para somar cada coluna da matriz.
+04) Criar um método para somar cada linha da matriz e mostrar os valores separadamente.
+05) Criar um método para somar cada coluna da matriz e mostrar separadamente.
 06) Criar um método para somar a diagonal principal da matriz.
 07) Criar um método para somar a diagonal secundária da matriz.
 08) Criar um método para somar o triângulo superior da matriz.
 09) Criar um método para somar o triângulo inferior da matriz.
-10) Criar um método para smar cada quadrante da matriz.
+10) Criar um método para somar cada quadrante da matriz.
 11) Criar um método para pesquisar um elemento na matriz.
 12) Criar um método concatenar duas matrizes.
 13) Criar um método para somar duas matrizes.
