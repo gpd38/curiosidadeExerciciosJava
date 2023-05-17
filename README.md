@@ -34,6 +34,7 @@ Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, a
 |Estrutura de Fila  |[Programa012](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa012)||
 |Alg. de Validação  |[Programa013](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa013)|Validar crachá Cadastur|
 |CPF e CNPJ         |[Programa014](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa014)|Validar CPF_CNPJ|
+|Classe Math Java   |[Programa015]  |
  
 ### Licença
 
