@@ -31,10 +31,11 @@ Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, a
 |Estoque e Vendas   |[Programa009](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa009)||
 |Web Driver         |[Programa010](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa010)||
 |Matriz             |[Programa011](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa011)|Operações com matriz|
-|Estrutura de Fila  |[Programa012](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa012)||
+|Fila (FIFO)		|[Programa012](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa012)|Operações utilizando Fila|
 |Alg. de Validação  |[Programa013](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa013)|Validar crachá Cadastur|
 |CPF e CNPJ         |[Programa014](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa014)|Validar CPF_CNPJ|
 |Classe Math Java   |[Programa015](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa015)|Abs, Round, Ceil, Floor, Min|
+|Thread			    |[Programa016](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa016)|Joguinho de corrida com thread|
  
 ### Licença
 
