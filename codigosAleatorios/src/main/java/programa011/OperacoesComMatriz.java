@@ -13,6 +13,8 @@ public class OperacoesComMatriz {
 	static Random rand;
 
 	public static void main(String[] args) {
+		
+		setup();
 
 		scanner = new Scanner(System.in);
 		char continuar = 's';
@@ -246,9 +248,9 @@ public class OperacoesComMatriz {
 	private static void metodo01() {
 		console();
 		do {
-			System.out.print("Digite o tamanho da matriz (3 < x < 50): ");
+			System.out.print("Digite o tamanho da matriz (3 < x < 20): ");
 			tamanho = scanner.nextInt();
-		} while (tamanho < 3 || tamanho > 50);
+		} while (tamanho < 3 || tamanho > 20);
 
 		matrizDefault = new int[tamanho][tamanho];
 		System.out.println("Uma matriz [" + tamanho + "][" + tamanho + "] foi criada com sucesso.");
@@ -265,7 +267,7 @@ public class OperacoesComMatriz {
 			console();
 			rand = new Random();
 			for (int i = 0; i < matrizDefault.length; i++) {
-				for (int j = 0; j < matrizDefault[i].length; j++) {
+				for (int j = 0; j < matrizDefault[0].length; j++) {
 					matrizDefault[i][j] = rand.nextInt(98) + 1;
 				}
 			}
@@ -285,7 +287,7 @@ public class OperacoesComMatriz {
 			console();
 			System.out.println("O elemento deve ser 0 < x < 100");
 			for (int i = 0; i < matrizDefault.length; i++) {
-				for (int j = 0; j < matrizDefault[i].length; j++) {
+				for (int j = 0; j < matrizDefault[0].length; j++) {
 					do {
 						System.out.print("Matriz [" + (i + 1) + "][" + (j + 1) + "] = ");
 						elemento = scanner.nextInt();
@@ -307,7 +309,7 @@ public class OperacoesComMatriz {
 			console();
 			for (int i = 0; i < matrizDefault.length; i++) {
 				int sum = 0;
-				for (int j = 0; j < matrizDefault[i].length; j++) {
+				for (int j = 0; j < matrizDefault[0].length; j++) {
 					sum += matrizDefault[i][j];
 				}
 				System.out.println("Row " + (i + 1) + ": " + sum);
@@ -528,11 +530,11 @@ public class OperacoesComMatriz {
 	 */
 	private static void metodo12() {
 		if (matrizDefault != null) {
-			int[][] matrizA = new int[matrizDefault.length][matrizDefault.length];
-			int[][] matrizB = new int[matrizDefault.length][matrizDefault.length];
-			;
-			int[][] matrizResultado = new int[matrizA.length][matrizA.length];
+			int[][] matrizA = new int[tamanho][tamanho];
+			int[][] matrizB = new int[tamanho][tamanho];
+			int[][] matrizResultado = new int[tamanho][tamanho];
 			String concat;
+			rand = new Random();
 
 			for (int i = 0; i < matrizDefault.length; i++) {
 				for (int j = 0; j < matrizDefault[0].length; j++) {
@@ -888,8 +890,24 @@ public class OperacoesComMatriz {
 		}
 	}
 
+	/**
+	 * Configurações iniciais para funcionamento da classe
+	 */
+	private static void setup() {
+		tamanho = 3;
+		matrizDefault = new int[tamanho][tamanho];
+		for (int i = 0; i < matrizDefault.length; i++) {
+			for (int j = 0; j < matrizDefault[0].length; j++) {
+				matrizDefault[i][j] = (i + j) * 2;
+			}
+		}
+	}
+
+	/**
+	 * Inserir espaços entre uma execução e outra
+	 */
 	public static void console() {
-		for (int i = 0; i < 3; i++) {
+		for (int i = 1; i < 3; i++) {
 			System.out.println();
 		}
 	}
@@ -902,42 +920,51 @@ public class OperacoesComMatriz {
 	}
 
 	private static void menuOpcoes() {
-		System.out.println("Para sair digite 0. \nEscolha uma das opcoes abaixo:");
-		System.out.println("\nCriar um método para: ");
-		System.out.println("01. Gerar uma matriz.");
-		System.out.println("02. Preencher a matriz automaticamente");
-		System.out.println("03. Preencher a matriz manualmente");
-		System.out.println("04. Somar cada linha da matriz.");
-		System.out.println("05. Somar cada coluna da matriz.");
-		System.out.println("06. Somar a diagonal principal da matriz.");
-		System.out.println("07. Somar a diagonal secundária da matriz.");
-		System.out.println("08. Somar o triângulo superior da matriz.");
-		System.out.println("09. Somar o triângulo inferior da matriz.");
-		System.out.println("10. Somar cada quadrante da matriz.");
-		System.out.println("11. Pesquisar um elemento na matriz.");
-		System.out.println("12. Concatenar duas matrizes.");
-		System.out.println("13. Somar duas matrizes.");
-		System.out.println("14. Subtrair duas matrizes.");
-		System.out.println("15. Multiplicar duas matrizes.");
-		System.out.println("16. Dividir duas matrizes.");
-		System.out.println("17. Gerar uma matriz com a borda em um e os demais em zero.");
-		System.out.println("18. Encontrar o menor e o maior elemento da matriz.");
-		System.out.println("19. Gerar uma matriz com bordas intercaladas entre um e zero.");
-		System.out.println("20. Imprimir as posições da matriz.");
-		System.out.println("21. Imprimir os valores da matriz.");
-		System.out.println("22. Somar as posições da matriz.");
-		System.out.println("23. Ordenar a matriz decrescente.");
-		System.out.println("24. Ordenar a matriz crescente.");
-		System.out.println("25. Atualizar um elemento específico. ");
-		System.out.println("26. Calcular o determinante de uma matriz.");
-		System.out.println("27. Calcular a transposta de uma matriz.");
-		System.out.println("28. Validar se duas matrizes são iguais.");
-		System.out.println("29. Contar quantos elementos pares e ímpares existem na matriz.");
-		System.out.println("30. Validar se a soma de cada linha e coluna são iguais.");
+		System.out.println("Escolha uma das opcoes abaixo:");
+		System.out.println("\t00. Finalizar execução");
+
+		System.out.println("Entrada de valores: ");
+		System.out.println("\t01. Gerar uma matriz aleatória com o tamanho definido pelo usuário.");
+		System.out.println("\t02. Preencher a matriz automaticamente");
+		System.out.println("\t03. Preencher a matriz manualmente");
+
+		System.out.println("Operações básicas: ");
+		System.out.println("\t04. Somar cada linha da matriz.");
+		System.out.println("\t05. Somar cada coluna da matriz.");
+		System.out.println("\t06. Somar a diagonal principal da matriz.");
+		System.out.println("\t07. Somar a diagonal secundária da matriz.");
+		System.out.println("\t08. Somar o triângulo superior da matriz.");
+		System.out.println("\t09. Somar o triângulo inferior da matriz.");
+		System.out.println("\t10. Somar cada quadrante da matriz.");
+		System.out.println("\t11. Pesquisar um elemento na matriz.");
+		System.out.println("\t18. Encontrar o menor e o maior elemento da matriz.");
+		System.out.println("\t20. Imprimir as posições da matriz.");
+		System.out.println("\t21. Imprimir os valores da matriz.");
+		System.out.println("\t22. Somar as posições da matriz.");
+		System.out.println("\t23. Ordenar a matriz decrescente.");
+		System.out.println("\t24. Ordenar a matriz crescente.");
+		System.out.println("\t25. Atualizar um elemento específico. ");
+		System.out.println("\t29. Contar quantos elementos pares e ímpares existem na matriz.");
+		System.out.println("\t30. Validar se a soma de cada linha e coluna são iguais.");
+
+		System.out.println("Operações entre matrizes: ");
+		System.out.println("\t12. Concatenar duas matrizes.");
+		System.out.println("\t13. Somar duas matrizes.");
+		System.out.println("\t14. Subtrair duas matrizes.");
+		System.out.println("\t15. Multiplicar duas matrizes.");
+		System.out.println("\t16. Dividir duas matrizes.");
+		System.out.println("\t28. Validar se duas matrizes são iguais.");
+
+		System.out.println("Operações mais complexas com matriz: ");
+		System.out.println("\t17. Gerar uma matriz com a borda em um e os demais em zero.");
+		System.out.println("\t19. Gerar uma matriz com bordas intercaladas entre um e zero.");
+		System.out.println("\t26. Calcular o determinante de uma matriz.");
+		System.out.println("\t27. Calcular a transposta de uma matriz.");
+
 		System.out.println("Exercícios Extras: ");
-		System.out.println("31. Gerar uma matriz esparsa.");
-		System.out.println("32. Transformar uma matriz 2D em 3D.");
-		System.out.print("Opcao escolhida: ");
+		System.out.println("\t31. Gerar uma matriz esparsa.");
+		System.out.println("\t32. Transformar uma matriz 2D em 3D.");
+		System.out.print("Opção escolhida: ");
 	}
 
 	public static int[][][] calculaQuadrante(int[][] matriz) throws Exception {
