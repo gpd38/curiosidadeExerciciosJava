@@ -1,0 +1,9 @@
+Criar um jogo que simula uma corrida de arrancada utilizando threads. 
+
+Requisitos:
+- Deve existir 4 carros de corrida.
+- Deve existir uma parada aleatória simulando um abastecimento.
+- Deve exibir a ordem de chegada dos corredores.
+
+Extras:
+- Utilizar imagens de carros, posto, linha de partida e chegada, músicas entre outras ideias.
