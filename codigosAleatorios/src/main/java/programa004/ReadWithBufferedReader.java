@@ -8,7 +8,7 @@ public class ReadWithBufferedReader {
 
 	public static void main(String[] args) {
 
-		String path = "C:\\temp\\in.txt";
+		String path = "..\\codigosAleatorios\\src\\main\\java\\programa004\\in.txt";
 		BufferedReader br = null;
 		FileReader fr = null;
 
