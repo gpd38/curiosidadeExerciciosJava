@@ -8,7 +8,7 @@ public class DelFiles {
 
 	public static void main(String[] args) {
 
-		String caminho = "C:\\temp";
+		String caminho = "..\\codigosAleatorios\\src\\main\\java\\programa006\\arquivos";
 
 		exibeArquivos(caminho);
 		deletarArquivos(0, caminho);
