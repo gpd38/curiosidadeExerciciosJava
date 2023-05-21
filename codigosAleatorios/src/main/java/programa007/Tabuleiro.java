@@ -90,10 +90,13 @@ public class Tabuleiro {
 	}
 
 	public boolean tabuleiroCompleto() {
-		for (int linha = 0; linha < 3; linha++)
-			for (int coluna = 0; coluna < 3; coluna++)
-				if (tabuleiro[linha][coluna] == 0)
-					return false;
-		return true;
+		for (int linha = 0; linha < 3; linha++) {
+			for (int coluna = 0; coluna < 3; coluna++) {
+				if (tabuleiro[linha][coluna] == 0) {
+					return false; // Se houver um espaço vazio, o tabuleiro não está completo
+				}
+			}
+		}
+		return true; // Se não houver espaços vazios, o tabuleiro está completo
 	}
 }
