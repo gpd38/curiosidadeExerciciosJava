@@ -40,11 +40,11 @@ public class Jogo {
 		do {
 			System.out.println("1. Humano");
 			System.out.println("2. Computador\n");
-			System.out.print("Op��o: ");
+			System.out.print("Opção: ");
 			opcao = entrada.nextInt();
 
 			if (opcao != 1 && opcao != 2)
-				System.out.println("Op��o inv�lida! Tente novamente");
+				System.out.println("Opção inválida! Tente novamente");
 		} while (opcao != 1 && opcao != 2);
 
 		return opcao;
@@ -54,14 +54,14 @@ public class Jogo {
 		if (ganhou() == 0) {
 			System.out.println("----------------------");
 			System.out.println("\nRodada " + rodada);
-			System.out.println("� a vez do jogador " + vez());
+			System.out.println("É a vez do jogador " + vez());
 
 			if (vez() == 1)
 				jogador1.jogar(tabuleiro);
 			else
 				jogador2.jogar(tabuleiro);
 
-			if (tabuleiro.tabuleiroCompleto()) {
+			if (tabuleiro.tabuleiroCompleto() && ganhou() == 0) {
 				System.out.println("Tabuleiro Completo. Jogo empatado");
 				return false;
 			}
@@ -81,7 +81,7 @@ public class Jogo {
 	}
 
 	public int vez() {
-		if (vez % 2 == 1)
+		if (vez % 2 == 0)
 			return 1;
 		else
 			return 2;
