@@ -43,9 +43,9 @@ public class TrianguloRetangulo {
 		}
 
 		if ((hipotenusa) == catetos) {
-			System.out.println("O triangulo ï¿½ retangulo");
+			System.out.println("O triangulo é retangulo");
 		} else {
-			System.out.println("O triangulo nï¿½o ï¿½ retangulo");
+			System.out.println("O triangulo não é retangulo");
 		}
 	}
 }
