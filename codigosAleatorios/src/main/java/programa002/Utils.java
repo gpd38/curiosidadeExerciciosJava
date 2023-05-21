@@ -24,8 +24,8 @@ public class Utils {
 	}
 
 	/**
-	 * Metodo que gera um nï¿½mero aleatorio com a quantidade de caracteres informada
-	 * no parï¿½metro
+	 * Metodo que gera um nï¿½mero aleatorio com a quantidade de caracteres
+	 * informada no parï¿½metro
 	 * 
 	 * @param tamanhoNumeroEmCaracteres
 	 * @return
@@ -52,7 +52,7 @@ public class Utils {
 
 	/**
 	 * Metodo que gea um numero aleatorio com a quantidade de caracteres informada
-	 * no parï¿½metro.
+	 * no parâmetro.
 	 * 
 	 * @param tamanhoNumeroEmCaracteres
 	 * @return
@@ -84,7 +84,7 @@ public class Utils {
 	}
 
 	/**
-	 * Metodo que gera um cpf aleatï¿½rio
+	 * Metodo que gera um cpf aleatório
 	 * 
 	 * @return
 	 */
@@ -124,7 +124,7 @@ public class Utils {
 	}
 
 	/**
-	 * Metodo que gera um CNPJ aleatï¿½rio
+	 * Metodo que gera um CNPJ aleatório
 	 * 
 	 * @return
 	 */
@@ -168,14 +168,27 @@ public class Utils {
 	}
 
 	/**
-	 * Metodo que gera uma string com uma quantidade de caracteres aleatï¿½rio
+	 * Metodo que gera uma string com uma quantidade de caracteres aleatório
 	 * 
 	 * @return
 	 */
 
 	public String gerarDescricaoAleatoria() {
-		// TODO Auto-generated method stub
-		return null;
+		char letra;
+
+		int tamanhoTexto = gerador.nextInt(quantiadeCaracteresMinima, quantidadeCaracteresMaxima);
+
+		StringBuilder concatenarTexto = new StringBuilder();
+
+		for (int i = 0; i < tamanhoTexto; i++) {
+			for (int j = 0; j < tamanhoTexto; j++) {
+				letra = (char) gerador.nextInt(97, 122);
+				concatenarTexto.append(letra);
+			}
+			concatenarTexto.append(" ");
+		}
+
+		return concatenarTexto.toString();
 	}
 
 	/**
@@ -209,7 +222,7 @@ public class Utils {
 	}
 
 	/**
-	 * Metodo que valida se o numeroAleatorio gerado, jï¿½ foi utilizado pelo sistema.
+	 * Metodo que valida se o numeroAleatorio gerado, já foi utilizado pelo sistema.
 	 * 
 	 * @param numAleatorio
 	 * @return
@@ -226,6 +239,15 @@ public class Utils {
 
 	private int mod(int dividendo, int divisor) {
 		return (int) Math.round(dividendo - (Math.floor(dividendo / divisor) * divisor));
+	}
+
+	public boolean existeCPF(String cpfTecnico) {
+		for (Integer valor : listNumAleatorio) {
+			if (valor.toString().equals(cpfTecnico)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -44,31 +44,31 @@ public class PrincipalChamadoTecnico {
 			}
 				break;
 			case 5: {
-				// System.out.println("Relatï¿½rio chamado.");
+				// System.out.println("Relatório chamado.");
 				assTecnica.RelatorioChamado();
 			}
 				break;
 			default:
-				System.out.println("Opï¿½ï¿½o Invï¿½lida");
+				System.out.println("Operação Inválida!");
 				break;
 			}
-		} while (operacao != 0);
+		} while (operacao != 0 || operacao > 5);
 
 	}
 
 	private static void MenuInicial() {
 
 		System.out.println("=========================");
-		System.out.println("   Assistï¿½ncia Tï¿½cnica   ");
+		System.out.println("   Assitência Técnica    ");
 		System.out.println("=========================");
 		System.out.println("[0] Finalizar.           ");
 		System.out.println("[1] Abrir Chamado.       ");
 		System.out.println("[2] Atender Chamado.     ");
 		System.out.println("[3] Cancelar Chamado.    ");
 		System.out.println("[4] Consultar Chamado.   ");
-		System.out.println("[5] Relatï¿½rio Chamado.   ");
+		System.out.println("[5] Relatório Chamado.   ");
 		System.out.println("=========================");
-		System.out.print("Escolha a operaï¿½ï¿½o: ");
+		System.out.print("Escolha a operação: ");
 
 	}
 
