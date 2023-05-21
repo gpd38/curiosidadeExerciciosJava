@@ -17,10 +17,10 @@ public class Calculadora {
 			System.out.print("Digite o segundo valor:");
 			int valor2 = calc.nextInt();
 			int resultado = 0;
-			String saida = "\n�������������Calculadora�������������\n";
+			String saida = "\n Calculadora \n";
 
-			System.out.print("\nQual operacao deseja fazer?" + "\n[1] - Soma" + "\n[2] - Subtra��o"
-					+ "\n[3] - Multiplica��o" + "\n[4] - Divis�o\nOpera��o Escolhida: ");
+			System.out.print("\nQual operacao deseja fazer?" + "\n[1] - Soma" + "\n[2] - Subtração"
+					+ "\n[3] - Multiplicação" + "\n[4] - Divisão\nOperação Escolhida: ");
 			int operacao = calc.nextInt();
 
 			// processamento
@@ -43,7 +43,7 @@ public class Calculadora {
 			default:
 				saida += "Opera��o N�o dispon�vel :(";
 			}
-			saida += "\n�����������������������������������������";
+			saida += "\n ";
 
 			// Saida
 			System.out.println(saida);
