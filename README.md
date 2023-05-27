@@ -20,10 +20,10 @@ Alguns exercícios são retirados de listas de faculdade, dúvidas de forúns, a
 
 |Código             |Link                                                                                                                   |Descrição|
 |:------------------|-----------------------------------------------------------------------------------------------------------------------|---------|
-|Triangulo de Pascal|[Programa001](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa001)||
-|Assistência Técnica|[Programa002](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa002)||
-|Triangulo Retângulo|[Programa003](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa003)||
-|Leitura de Arquivo |[Programa004](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa004)||
+|Triangulo de Pascal|[Programa001](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa001)|Programa para criar um triangulo de Pascal|
+|Orientação a Objeto|[Programa002](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa002)|Sistema de Assitência Técnica|
+|Tipos de triângulo |[Programa003](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa003)|Programa que valida o tipo de triangulo formado|
+|Leitura de Arquivo |[Programa004](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa004)|Programa com várias opções de leitura de arquivo de texto|
 |Calculadora        |[Programa005](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa005)||
 |Deletar Arquivo    |[Programa006](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa006)||
 |Jogo da Velha      |[Programa007](https://github.com/gpd38/curiosidadeExerciciosJava/tree/main/codigosAleatorios/src/main/java/programa007)||
